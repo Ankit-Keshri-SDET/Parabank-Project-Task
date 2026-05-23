@@ -6,6 +6,7 @@ Feature: Register a new User into the website
   Background:
     Given Given User is on the home page
 
+  @Regression
   Scenario Outline: TC_001_To Verify new user is registered with the bank
     When User clicks on Register link
     And User enters "<first_name>", "<last_name>", "<address>", "<city>", "<state>", "<zipCode>", "<phone>", "<ssn>" in the register form
@@ -17,9 +18,10 @@ Feature: Register a new User into the website
     Then User is on the home page
 
     Examples:
-      | first_name | last_name | address     | city     | state     | zipCode | phone     | ssn | user_name           | password    | confirm_password | Success_Message |
-      | NEW        | TESTER    | NEW ADDRESS | NEW CITY | NEW STATE | 561781  | 987615541 | 789 | taskbdd12@gmail.com | tasknew@123 | tasknew@123      |                 |
+      | first_name | last_name | address     | city     | state     | zipCode | phone     | ssn | user_name            | password    | confirm_password | Success_Message |
+      | NEW        | TESTER    | NEW ADDRESS | NEW CITY | NEW STATE | 561781  | 987615541 | 789 | taskbdd123@gmail.com | tasknew@123 | tasknew@123      |                 |
 
+  @Smoke
   Scenario Outline: TC_002_To Verify User is able to login and check his account balance on the dashboard page
     When User enters "<user_name>", "<password>" in the login input field
     And User clicks on Login button

@@ -14,7 +14,7 @@ public class AccountsPage extends BasePage {
     @FindBy(css = "table#accountTable tbody tr:first-child td:nth-child(3)")
     private WebElement availableAmount;
 
-    @FindBy(css = "table#accountTable tfoot td:nth-child(2)")
+    @FindBy(xpath = "//*[@id=\"accountTable\"]/tbody/tr[2]/td[2]/b")
     private WebElement totalAmount;
 
     @FindBy(linkText = "Log Out")

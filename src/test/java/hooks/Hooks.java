@@ -12,9 +12,6 @@ public class Hooks {
 
     @Before
     public void setUp(Scenario scenario) {
-        System.out.println("========================================");
-        System.out.println("Starting Scenario: " + scenario.getName());
-        System.out.println("========================================");
         String browser = System.getProperty("browser", "chrome");
         WebDriver driver = DriverFactory.initDriver(browser);
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
@@ -35,7 +32,6 @@ public class Hooks {
             System.out.println("Scenario PASSED: " + scenario.getName());
         }
 
-        System.out.println("========================================\n");
         DriverFactory.quitDriver();
     }
 }
